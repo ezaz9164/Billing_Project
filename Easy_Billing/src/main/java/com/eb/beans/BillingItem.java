@@ -21,5 +21,5 @@ public class BillingItem {
 	private String unitOfReference;
 	private String productCompany;
 	
-	
+	 
 }
