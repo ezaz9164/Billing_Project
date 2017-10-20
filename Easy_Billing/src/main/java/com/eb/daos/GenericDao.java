@@ -20,9 +20,9 @@ public class GenericDao {
 
 	}
 
-	public int Save(Object entity) {
+	public Long Save(Object entity) {
 
-		return (Integer) getSession().save(entity);
+		return (Long) getSession().save(entity);
 
 	}
 

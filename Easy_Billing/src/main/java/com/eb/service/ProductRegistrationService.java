@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.eb.beans.Product;
+import com.eb.beans.ProductForm;
 import com.eb.bo.CompanyDetailsBo;
 import com.eb.bo.ProductBo;
 import com.eb.daoAPI.ICompanyDao;
@@ -25,7 +25,7 @@ public class ProductRegistrationService {
 	private ICompanyDao companyDao;
 
 	@Transactional
-	public int saveProduct(Product product) {
+	public Long saveProduct(ProductForm product) {
 
 		ProductBo productBo = new ProductBo();
 
@@ -37,8 +37,9 @@ public class ProductRegistrationService {
 		productBo.setProductName(product.getProductName());
 		productBo.setRate(product.getRate());
 		productBo.setUnitOfReference(product.getUnitOfReference());
-
-		int pId = productRegistrationDao.saveProduct(productBo);
+		
+		
+		Long pId = productRegistrationDao.saveProduct(productBo);
 
 		return pId;
 

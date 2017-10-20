@@ -11,13 +11,13 @@ import com.eb.bo.ProductBo;
 import com.eb.daoAPI.IProductRegistrationDao;
 
 @Repository
-@PropertySource("classpath:/db.properties")
+@PropertySource("classpath:/query.properties")
 public class ProductRegistrationDaoImpl extends GenericDao implements IProductRegistrationDao {
 
 	@Autowired
 	private Environment env;
 
-	public int saveProduct(ProductBo productBo) {
+	public Long saveProduct(ProductBo productBo) {
 		return Save(productBo);
 	}
 

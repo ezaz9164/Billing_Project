@@ -1,45 +1,38 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
-<script type="text/javascript">
-	function loadDoc() {
-		return new XMLHttpRequest();
-	}
+<script src="../JS/js_productRegistration.js"></script>
 
-	function checkProductName(str) {
-		var xhttp = loadDoc();
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				console.log(this.responseText);
 
-				try {
-					if (document.getElementById("pId").value == "") {
-						throw "enter a company Name";
-					} else if (this.responseText == "notAllowed") {
-						throw "product already exist"
-					} else {
-						document.getElementById("nError").innerHTML = '';
-					}
+<script type="text/javascript" >
 
-				} catch (e) {
-					document.getElementById("nError").innerHTML = e.toString();
-					document.getElementById("pId").value = '';
-				}
-			}
-		};
-		xhttp.open("GET",
-				"${pageContext.request.contextPath}/product/checkProductName.htm?pName="
-						+ str, true);
-		xhttp.send();
-	}
+
+function loadDoc() {
+	return new XMLHttpRequest();
+}
+
+
+function checkProductName(str) {
+	var xhttp = loadDoc();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			console.log(this.responseText);
+			var checkStatus=this.responseText;
+			checkFunction(checkStatus);
+		}
+	};
+	xhttp.open("GET","${pageContext.request.contextPath}/product/checkProductName.htm?pName="+ str, true);
+	xhttp.send();
+}
+
 </script>
 
 </head>
@@ -65,12 +58,12 @@
 			<div>
 				GST (%)
 				<form:select path="gst">
+				
+				
 				<c:forEach items="${companyDetailsList}" var="companyDetail">
 						<form:option value="${companyDetail.gst}">${companyDetail.gst}</form:option>
 					</c:forEach>
-				
-				
-				</form:select>
+				</form:select> 
 			</div>
 			<div>
 				MRP

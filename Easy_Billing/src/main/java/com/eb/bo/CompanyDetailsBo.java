@@ -19,12 +19,12 @@ public class CompanyDetailsBo {
 	@Id
 	@GenericGenerator(name="hiGen",strategy="increment")
 	@GeneratedValue(generator="hiGen")
-	private int cid;
+	private Long cid;
 	
 	@Column(name="cname")
 	private String companyName;
 
 	@Column(name="gst")
-	private float gst;
+	private Float gst;
 
 }
