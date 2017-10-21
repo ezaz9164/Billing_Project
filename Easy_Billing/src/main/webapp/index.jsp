@@ -12,7 +12,7 @@
 <br>
 <br>
 <tr>
-<td><a href="">Customer Registration</a></td><td><a href="${pageContext.request.contextPath}/product/req.htm">Product registration</a></td>
+<td><a href="Creg.htm">Customer Registration</a></td><td><a href="${pageContext.request.contextPath}/product/req.htm">Product registration</a></td>
 </tr>
 <tr>
 <td><a href="">UPdate Customer Details</a></td><td><a href=""> Update Product Details</a></td>

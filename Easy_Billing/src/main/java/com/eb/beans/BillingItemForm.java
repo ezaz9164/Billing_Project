@@ -5,19 +5,19 @@ import java.sql.Date;
 import lombok.Data;
 
 @Data
-public class BillingItem {
+public class BillingItemForm {
 
-	private int quantity;
+	private Long quantity;
 	private String productDescription;
-	private float mrp;
-	private float rate;
+	private Float mrp;
+	private Float rate;
 	private String offerItem;
-	private float gst;
-	private float price;
+	private Float gst;
+	private Float price;
 	private Date date;
 	private String hsnCode;
-	private int billNo;
-	private int customerId;
+	private Long billNo;
+	private Long customerId;
 	private String unitOfReference;
 	private String productCompany;
 	
