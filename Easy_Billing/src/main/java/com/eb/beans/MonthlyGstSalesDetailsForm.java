@@ -5,10 +5,10 @@ import java.sql.Date;
 import lombok.Data;
 
 @Data
-public class MonthlyGstSalesDetails {
+public class MonthlyGstSalesDetailsForm {
 
-	private float gst;
-	private float amount;
+	private Float gst;
+	private Float amount;
 	private Date date;
 	
 }

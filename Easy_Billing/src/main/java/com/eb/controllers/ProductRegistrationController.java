@@ -50,7 +50,7 @@ public class ProductRegistrationController implements UrlRefs {
 	@RequestMapping(method = RequestMethod.POST, path = UrlRefs.productRegistrationInitial)
 	public String submitProductRegistrationpage(Model model, @ModelAttribute Product product, BindingResult be) {
 
-		int pId = productRegService.saveProduct(product);
+		Long pId = productRegService.saveProduct(product);
 		model.addAttribute("pId", pId);
 
 		return "pRegSuccess";

@@ -17,7 +17,7 @@ public class ProductRegistrationDaoImpl extends GenericDao implements IProductRe
 	@Autowired
 	private Environment env;
 
-	public int saveProduct(ProductBo productBo) {
+	public Long saveProduct(ProductBo productBo) {
 		return Save(productBo);
 	}
 

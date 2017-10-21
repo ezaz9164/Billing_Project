@@ -15,6 +15,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.eb.bo.CompanyDetailsBo;
+import com.eb.bo.CustomerDetailsBo;
 import com.eb.bo.ProductBo;
 
 @Configuration
@@ -62,7 +63,7 @@ public class RootConfig  {
 		LocalSessionFactoryBean sessionFactory=new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource());
 		sessionFactory.setHibernateProperties(properties);
-		sessionFactory.setAnnotatedClasses(ProductBo.class,CompanyDetailsBo.class);
+		sessionFactory.setAnnotatedClasses(ProductBo.class,CompanyDetailsBo.class,CustomerDetailsBo.class);
 		return sessionFactory;
 	}
 	

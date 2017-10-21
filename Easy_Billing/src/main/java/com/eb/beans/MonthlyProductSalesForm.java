@@ -3,9 +3,9 @@ package com.eb.beans;
 import lombok.Data;
 
 @Data
-public class MonthlyProductSales {
+public class MonthlyProductSalesForm {
 
-	private int quantity;
+	private Integer quantity;
 	private String productName;
 
 }

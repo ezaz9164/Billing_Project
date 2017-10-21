@@ -25,7 +25,7 @@ public class ProductRegistrationService {
 	private ICompanyDao companyDao;
 
 	@Transactional
-	public int saveProduct(Product product) {
+	public Long saveProduct(Product product) {
 
 		ProductBo productBo = new ProductBo();
 
@@ -38,7 +38,7 @@ public class ProductRegistrationService {
 		productBo.setRate(product.getRate());
 		productBo.setUnitOfReference(product.getUnitOfReference());
 
-		int pId = productRegistrationDao.saveProduct(productBo);
+		Long pId = productRegistrationDao.saveProduct(productBo);
 
 		return pId;
 

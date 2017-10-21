@@ -4,10 +4,10 @@ import java.sql.Date;
 
 import lombok.Data;
 @Data
-public class ProductSalesDetails {
+public class ProductSalesDetailsForm {
 
 
-	private int quantity;
+	private Integer quantity;
 	private String productName;
 	private Date date;
 	

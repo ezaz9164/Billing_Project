@@ -5,7 +5,7 @@ import com.eb.bo.ProductBo;
 
 public interface IProductRegistrationDao {
 
-	int saveProduct(ProductBo productBo);
+	Long saveProduct(ProductBo productBo);
 	int countProductByName(String productName);
 	
 	
