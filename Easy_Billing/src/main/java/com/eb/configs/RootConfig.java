@@ -3,6 +3,8 @@ package com.eb.configs;
 import java.io.IOException;
 
 
+
+
 import java.util.Properties;
 
 import org.springframework.context.annotation.Bean;
@@ -19,7 +21,7 @@ import com.eb.bo.ProductBo;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages= {"com.eb.daos","com.eb.service"})
+@ComponentScan(basePackages= {"com.eb.daos","com.eb.service","com.eb.util"})
 public class RootConfig  {
 	
 	private Properties properties;
@@ -71,6 +73,7 @@ public class RootConfig  {
 		
 		HibernateTransactionManager hibernateTransactionManager=new HibernateTransactionManager();
 		hibernateTransactionManager.setSessionFactory(getSessionFactory().getObject());
+		
 		return hibernateTransactionManager;
 		
 	}
