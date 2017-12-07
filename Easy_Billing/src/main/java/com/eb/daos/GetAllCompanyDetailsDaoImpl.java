@@ -14,8 +14,8 @@ import com.eb.bo.CompanyDetailsBo;
 import com.eb.daoAPI.ICompanyDao;
 
 @Repository
-@PropertySource("classpath:/db.properties")
-public class GetAllCompanyDetailsDao extends GenericDao implements ICompanyDao{
+@PropertySource("classpath:/query.properties")
+public class GetAllCompanyDetailsDaoImpl extends GenericDao implements ICompanyDao{
 
 	@Autowired
 	private Environment env;
