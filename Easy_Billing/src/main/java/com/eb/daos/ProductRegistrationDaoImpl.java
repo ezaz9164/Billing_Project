@@ -11,7 +11,7 @@ import com.eb.bo.ProductBo;
 import com.eb.daoAPI.IProductRegistrationDao;
 
 @Repository
-@PropertySource("classpath:/db.properties")
+@PropertySource("classpath:/query.properties")
 public class ProductRegistrationDaoImpl extends GenericDao implements IProductRegistrationDao {
 
 	@Autowired
@@ -24,7 +24,6 @@ public class ProductRegistrationDaoImpl extends GenericDao implements IProductRe
 	public int countProductByName(String productName) {
 		int noOfProducts = 0;
 		System.out.println(productName);
-		@SuppressWarnings("unchecked")
 		List<Object> s = getEntity(env.getProperty("query.checkProductName"), new Object[] { productName });
 
 		Object o = s.get(0);
