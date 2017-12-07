@@ -6,11 +6,11 @@ import lombok.Data;
 
 
 @Data
-public class BillDetails {
+public class BillDetailsForm {
 
-	private int billNo;
-	private int customerId;
-	private float amount;
+	private Long billNo;
+	private Long customerId;
+	private Float amount;
 	private Date date;
 
 		

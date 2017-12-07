@@ -32,7 +32,9 @@ public class ProductRegistrationService {
 	
 	
 	@Transactional
+
 	public Long saveProduct(ProductForm product) {
+
 
 		ProductBo productBo = new ProductBo();
 
